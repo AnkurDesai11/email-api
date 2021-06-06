@@ -28,7 +28,7 @@ public class EmailController {
 		
 		System.out.println(request);
 		if(this.emailService.sendEmail(request.getSubject(), request.getMessage(), request.getTo())){
-			return ResponseEntity.ok("done");
+			return ResponseEntity.ok("email sent");
 		}
 		else {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("email not sent");
